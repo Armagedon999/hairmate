@@ -13,6 +13,7 @@ class Customer extends Model
         'user_id', // barbershop owner
         'name',
         'phone',
+        'photo', // foto opsional
     ];
 
     public function user()

@@ -1,11 +1,12 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/vue3';
+import { Head, usePage } from '@inertiajs/vue3';
 import { computed } from 'vue';
 
-const user = $page.props.auth.user;
-const isBarbershop = computed(() => user?.role === 'barbershop');
-const isPelanggan = computed(() => user?.role === 'pelanggan');
+const page = usePage();
+const user = computed(() => page.props.auth.user);
+const isBarbershop = computed(() => user.value?.role === 'barbershop');
+const isPelanggan = computed(() => user.value?.role === 'pelanggan');
 </script>
 
 <template>
